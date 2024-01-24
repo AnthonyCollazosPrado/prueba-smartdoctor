@@ -22,4 +22,7 @@ export default {
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
+.textoBoton {
+  font-size: 80%;
+}
 </style>
