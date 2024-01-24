@@ -20,25 +20,19 @@ export default createStore({
   mutations: {
     //actualiza la data del input de nueva tarea
     setValues(state, values) {
-      console.log('asdfasdfadsadsads');
-      console.log(state.values.nombre);
-      console.log(state.values.descripcion);
       state.values = Object.assign({}, state.values, values);
     },
     //agrega la nueva tarea a la lista tareas
     agregarTarea(state) {
       let id = 't' + (state.tareas.length + 1);
       let nombre = state.values.nombre;
-      console.log('1asdfasdfadsadsads');
-      console.log(state.values.descripcion.toString());
-     let descripcion = 'adfdsfdsa';
-      //console.log(descripcion);
-      console.log('2asdfasdfadsadsads');
+      let descripcion = state.values.descripcion.toString();
       let estado = 'pendiente';
+      state.estadoFiltro = 'todo';
       state.tareas.push({
         id: id,
         nombre: nombre,
-        descripcion: state.values.descripcion.toString(),
+        descripcion: descripcion,
         estado: estado
       });
     },
